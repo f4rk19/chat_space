@@ -29,8 +29,8 @@
 |-----:|---:|-----:|
 |body|text|----|
 |image|string|---|
-|user|references|foreign_key: true|
-|chat_group|references|foreign_key: true|
+|user|references|foreign_key: true, null: false|
+|chat_group|references|foreign_key: true, null: false|
 
 ###Asociation
 - belongs_to :user
@@ -39,8 +39,8 @@
 ## Users_chatsテーブル
 |Column|Type|Option|
 |-----:|---:|-----:|
-|user|references|foreign_key: true|
-|chat_group|references|foreign_key: true|
+|user|references|foreign_key: true, null: false|
+|chat_group|references|foreign_key: true, null:false|
 
 ###Asociation
 - belongs_to: user
