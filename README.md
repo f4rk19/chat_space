@@ -5,27 +5,29 @@
 
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false,add_index :users, :name, unique: true|
-|email|string|null: false, add_index :users, :email, unique: true|
+|name|string|null: false, index: true, unique: true|
+|email|string|null: false, index: true, unique: true|
 
 ### Asociation
 - has_many :meessages
 - has_many :chat_groups, through: :users_chats
+- has_many :users_chats
 
 ## Chat_groupsテーブル
 
 |Column|Type|Option|
 |:-----|---:|-----:|
-|name|string|null: false|
+|name|string|null: false, unique: true|
 
 ###Asociation
 - has_many :messages
 - has_many :users, through: :users_chats
+- has_many :users_chats
 
 ## messagesテーブル
 |Column|Type|Option|
 |-----:|---:|-----:|
-|body|text|null: false|
+|body|text|----|
 |image|string|---|
 |user|references|foreign_key: true|
 |chat_group|references|foreign_key: true|
@@ -43,5 +45,4 @@
 ###Asociation
 - belongs_to: user
 - belongs_to: chat_group
-=======
->>>>>>> Stashed changes
+
