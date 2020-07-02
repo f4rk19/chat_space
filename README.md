@@ -1,4 +1,5 @@
 # README
+<<<<<<< Updated upstream
 
 ## Usersテーブル
 
@@ -42,3 +43,5 @@
 ###Asociation
 - belongs_to: user
 - belongs_to: chat_group
+=======
+>>>>>>> Stashed changes
