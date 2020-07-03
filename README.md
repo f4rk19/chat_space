@@ -1,24 +1,47 @@
-# README
+# DB設計
+<<<<<<< Updated upstream
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usersテーブル
 
-Things you may want to cover:
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false, index: true, unique: true|
+|email|string|null: false, index: true, unique: true|
 
-* Ruby version
+### Asociation
+- has_many :meessages
+- has_many :chat_groups, through: :users_chats
+- has_many :users_chats
 
-* System dependencies
+## Chat_groupsテーブル
 
-* Configuration
+|Column|Type|Option|
+|:-----|---:|-----:|
+|name|string|null: false, unique: true|
 
-* Database creation
+###Asociation
+- has_many :messages
+- has_many :users, through: :users_chats
+- has_many :users_chats
 
-* Database initialization
+## messagesテーブル
+|Column|Type|Option|
+|-----:|---:|-----:|
+|body|text|----|
+|image|string|---|
+|user|references|foreign_key: true, null: false|
+|chat_group|references|foreign_key: true, null: false|
 
-* How to run the test suite
+###Asociation
+- belongs_to :user
+- belongs_to :chat_group
 
-* Services (job queues, cache servers, search engines, etc.)
+## Users_chatsテーブル
+|Column|Type|Option|
+|-----:|---:|-----:|
+|user|references|foreign_key: true, null: false|
+|chat_group|references|foreign_key: true, null:false|
 
-* Deployment instructions
-
-* ...
+###Asociation
+- belongs_to: user
+- belongs_to: chat_group
