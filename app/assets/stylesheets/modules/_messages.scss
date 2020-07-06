@@ -48,14 +48,18 @@
       .group-message{
         height: 65px;
         list-style: none;
-        .group-name{
-          font-size: 15px;
-          padding-top: 20px;
-          margin-bottom: 5px;
-        }
-        .new-message{
-          font-size: 11px;
-          margin-bottom: 40px;
+        a{
+          color: #ffffff;
+          text-decoration: none;
+          .group-name{
+            font-size: 15px;
+            padding-top: 20px;
+            margin-bottom: 5px;
+          }
+          .new-message{
+            font-size: 11px;
+            margin-bottom: 40px;
+          }
         }
       }
     } 
