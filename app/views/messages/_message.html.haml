@@ -3,7 +3,7 @@
     .message-info__user-name
       = message.user.name
     .message-info__created-at
-      = message.created_at.strftime("%Y年%m月%d日 %H時M分")
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .message
     - if message.content.present?
       %p.message__content
